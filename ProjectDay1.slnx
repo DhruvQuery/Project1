@@ -1,3 +1,91 @@
-<Solution>
-  <Project Path="ProjectDay1/ProjectDay1.csproj" Id="01569728-0a73-4930-ba17-af1fdc885236" />
-</Solution>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectDay1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World");
+
+            int n;
+            n = int.Parse(Console.ReadLine());
+            if (n%2 == 0)
+            {
+                Console.WriteLine("Entered number is even");
+            }
+            else
+            {
+                Console.WriteLine("Entered number is not even");
+            }
+            int fact = 1;
+            if (n < 0)
+            {
+                Console.WriteLine("Factorial of negative number does not exits");
+            }
+            else if (n == 0)
+            {
+                Console.WriteLine("1");
+            }
+            else
+            {
+                for (int i = 1; i <= n; ++i)
+                {
+                    fact = fact * i;
+                }
+                Console.WriteLine("The factorial of "+n+" is "+fact);
+            }
+
+            Console.WriteLine("Enter a number to check it is Prime or not");
+			int m = int.Parse(Console.ReadLine());
+            bool isPrime = true;
+            if (m <= 1)
+            {
+                isPrime = false;
+            }
+            else
+            {
+                for (int j = 2; j <= Math.Sqrt(m); j++)
+                {
+                    if (m % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if (isPrime)
+            {
+                Console.WriteLine("Entered number is prime");
+            }
+            else
+            {
+                Console.WriteLine("Entered number is not prime");
+            }
+            Console.WriteLine("Enter number of terms to show in Fibonacci Series");
+            int a = int.Parse(Console.ReadLine());
+            if (a < 0)
+            {
+                Console.WriteLine("Please enter positive number");
+                return;
+            }
+			int val1 = 0, val2 = 1, val3;
+			if (a >= 2)
+            {
+                Console.WriteLine(""+val1+" \n"+val2);
+            }
+            for (int i = 3; i <= a; i++)
+            {
+                val3 = val1 + val2;
+                Console.WriteLine(""+val3);
+                val1 = val2;
+                val2 = val3;
+            }
+
+		}
+    }
+}
