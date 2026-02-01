@@ -1,2 +1,2 @@
-# ProjectDay1
+# Projects
 Basic Programs of C#
